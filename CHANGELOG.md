@@ -2,6 +2,59 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] (2024-08-08)
+
+### Added
+
+- support for ethers `AbstractProvider` and `AbstractSigner` in constructor
+
+### Changed
+
+- update `kubo-rpc-client` from v3 to v4
+- update `iexec` and `ethers` dependencies
+
+## [1.0.3]
+
+### Changed
+
+- remove unnecessary initialization of storage in `sendEmail`
+
+## [1.0.2]
+
+### Changed
+
+- be able to call `fetchMyContacts` with `isUserStrict` param
+
+## [1.0.1]
+
+### Changed
+
+- fix drone ci for package publication on npm
+
+## [1.0.0]
+
+### Added
+
+- added `isUserStrict` optional param into both `fetchUserContacts` and `fetchMyContacts` functions
+
+### Changed
+
+- Make the `ethProvider` constructor parameter optional, enabling access to read functions without requiring a wallet.
+- [BREAKING] Ship ES2022 JavaScript instead of es2015 (aka es6) in order to support `cause` optional field in `Error`:
+  - Minimum browser versions: <https://gist.github.com/Julien-Marcou/156b19aea4704e1d2f48adafc6e2acbf>
+  - Minimum Node.js version: 18
+- Changed `fetchMyContacts`, `fetchUserContacts` and `sendEmail` error handling:
+  - Distinguish iExec protocol errors from other errors
+  - Store original error as the error cause
+- [BREAKING] Removed `originalError` from `WorkflowError`
+
+## [0.6.1]
+
+### Changed
+
+- upgraded the `iexec` dependency to ^8.7.0
+- fixed `Buffer` polyfill issue
+
 ## [0.6.0]
 
 ### Added
